@@ -1,0 +1,16 @@
+create new app:
+===============
+
+syntax:
+c:/.........../scripts/projectname>
+
+
+c:/.........../scripts/myproject> python manage.py startapp appname
+ex:
+c:/.........../scripts/myproject> python manage.py startapp todo
+
+note: you can see todo app in your poject folder inside.
+
+
+
+
