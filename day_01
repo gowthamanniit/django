@@ -1,0 +1,75 @@
+Introduction:
+
+Django is python based web framework which all you to quickly develop web site, wep app,mobile app, etc,....
+
+in Django python as back end
+in Django html,css,javascript,jinja,bootstrap,json,jquery as front end
+
+django gives readymade components
+(signin,singup,login,upload,....)
+
+advantages of django:
+=====================
+it is simple and easy to store database in django framework
+admin interface- power to handle database
+  - you can able to modifiy user data
+  - you can able to delete user data
+  - it is fully functional framework(readymade components)
+  - many number of additional package 
+  - it is scaleable (it can easily create,delete,update,read)
+  - written in python program
+important features of django
+=============================
+ - more security - websites
+ - versatility - django can build any almost any type of websites.
+      ex: you can build shopping webiste
+          you can build normal structure website.
+          scool,college website.          
+ - scalable --> we can easily modify in your project
+ - portability --> can run this website on many platforms.
+ 
+ installation of django
+ =======================
+ install pip?
+ c:/.../scripts> python -m pip install -U pip
+ 
+  pip stands for "preferred installer program".
+  
+  install django:
+  ================
+  c:/.../scripts> pip install django==1.11
+   or 2.13
+   
+   create project:
+   ===============
+   c:/.../scripts> django-admin startproject projectname
+   
+   ex
+   c:/.../scripts> django-admin startproject myproject
+   
+   note: new project(myproject) will be created in scripts folder.
+   
+   install mysql client: inorder to perform quries
+   ===============================================
+   
+   c:/.../scripts> pip install mysqlclient
+   
+   after installation to check your project working or not?
+   ========================================================
+   c:/.../scripts> cd myproject
+   c:/.../scripts/myproject> python manage.py runserver
+   
+   we can find some ip address (http://127.0.0.1:8000)
+   
+   copy ip and paste into browser url:
+   
+   
+   
+   
+   
+  
+  
+  
+  
+  
+  
