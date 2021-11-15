@@ -12,5 +12,21 @@ c:/.........../scripts/myproject> python manage.py startapp todo
 note: you can see todo app in your poject folder inside.
 
 
+if you any changes in your project pls type this command
+=========================================================
+c:/.........../scripts/myproject> python manage.py makemigrations
+
+
+admin control:
+==============
+c:/.........../scripts/myproject> python manage.py createsuperuser
+
+it will ask user name,email address, password,password again.
+
+command prompmt:
+c:/.........../scripts/myproject> python manage.py runserver
+goto url:
+http://127.0.0.1:8000/admin
+
 
 
