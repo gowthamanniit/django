@@ -14,7 +14,7 @@ note: you can see todo app in your poject folder inside.
 
 if you any changes in your project pls type this command
 =========================================================
-c:/.........../scripts/myproject> python manage.py makemigrate
+c:/.........../scripts/myproject> python manage.py migrate
 note: it will show what are the changes
 c:/.........../scripts/myproject> python manage.py makemigrations
 note: changes information display
