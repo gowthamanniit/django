@@ -1,0 +1,16 @@
+step 1: download get-pip.py file from mygithub
+step 2: paste this file 
+  C:\Users\Livewire\AppData\Local\Programs\Python\Python310>  
+  
+    or
+    
+    copy all lines from get-pip.py files
+    open idle --> new --> paste --> save get-pip.py (pyton310 folder not scripts folder)
+    
+step 3: 
+    in cmd :
+    C:\Users\Livewire\AppData\Local\Programs\Python\Python310\scripts> py get-pip.py
+    
+   
+    
+  
