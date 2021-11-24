@@ -32,7 +32,9 @@ important features of django
  =======================
  install pip?
  c:/.../scripts> python -m pip install -U pip
- 
+ or
+                py -m ensurepip --upgrade --> it's work
+                
   pip stands for "preferred installer program".
  
  to check whether pip installed or not ? pip --version
