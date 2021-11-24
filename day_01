@@ -31,9 +31,15 @@ important features of django
  installation of django
  =======================
  install pip?
- c:/.../scripts> python -m pip install -U pip
+ c:/.../scripts> python -m pip install -U pip (don't use - depricated)
+                 python -m pip install --upgrade pip (don't use )
  or
                 py -m ensurepip --upgrade --> it's work
+ or
+      download  get-pip.py file from in this github and paste python310 folder not script folder.
+      
+      c:.../python310> py get-pip.py     
+      
                 
   pip stands for "preferred installer program".
  
