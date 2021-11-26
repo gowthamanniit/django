@@ -46,8 +46,15 @@ important features of django
  to check whether pip installed or not ? pip --version
   install django:
   ================
-  c:/.../scripts> pip install django==1.11
+  c:/.../scripts> pip install django==1.11     (work upto python version 3.9 version)
    or 2.13
+   or 3.2.9 (latest version)  (it will work python 3.10  versions)
+   
+   
+   uninstall django:
+            pip uninstall django==1.11
+            
+            
    
    create project:
    ===============
