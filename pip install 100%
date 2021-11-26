@@ -9,7 +9,14 @@ step 2: paste this file
     
 step 3: 
     in cmd :
-    C:\Users\Livewire\AppData\Local\Programs\Python\Python310\scripts> py get-pip.py
+    C:\Users\Livewire\AppData\Local\Programs\Python\Python310> py get-pip.py
+step 4:
+  check verison
+C:\Users\Livewire\AppData\Local\Programs\Python\Python310>cd scripts
+C:\Users\Livewire\AppData\Local\Programs\Python\Python310\scripts>pip --version
+
+21.3.1 latest version(26-11-2021)
+
     
    
     
