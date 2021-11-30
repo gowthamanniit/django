@@ -53,8 +53,10 @@ important features of django
    
    uninstall django:
             pip uninstall django==1.11
-            
-            
+    
+    django version?
+    
+            python -m django --version
    
    create project:
    ===============
