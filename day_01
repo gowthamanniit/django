@@ -70,7 +70,7 @@ important features of django
    install mysql client: inorder to perform quries
    ===============================================
    
-   c:/.../scripts> pip install mysqlclient
+   c:/.../scripts/project name> pip install mysqlclient
    
    after installation to check your project working or not?
    ========================================================
