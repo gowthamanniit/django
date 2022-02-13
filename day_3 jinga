@@ -1,0 +1,39 @@
+
+def: jinga is a modern and user friendly for python
+     front end tool
+     secure web site
+features:
+  *) sandboxed execution
+  *) template inheritance
+  *) configurable syntax
+
+
+jinga variable declaration (for statement):
+===========================
+{% for statement %}
+{%endfor%}
+
+comment line:
+============
+{#...............#}
+
+expression:
+==========
+{{............}}
+
+if statement
+============
+{%if user.......%}
+
+block:
+======
+{%block head%}
+.................
+{%endblock%}
+
+include file:
+=============
+{%include 'demo.html'%}
+
+this is way to define jinga variables.
+======================================================
