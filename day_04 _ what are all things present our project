@@ -1,0 +1,8 @@
+scripts folder --> project name (livewiredemos)
+                --> i)   livewiredemos (projectname)
+                          --> init file
+                          --> settings file
+                          --> urls file
+                          --> wsgi file
+                --> ii)  db (sqlite file)
+                --> iii) manage.py 
