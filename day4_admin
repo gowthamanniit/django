@@ -1,9 +1,10 @@
-migrate
-makemigration
+python manage.py makemigrations --> display what are all the changes
+python manage.py migrate -------> save changes
 python managen.py createsuperuser  
 python manage.py runserver
 http://127.0.0.1:8000/admin
-python manage.py startapp myapp  
+
+python manage.py startapp myapp  ---> automatic in pycharm
 
 views.py file:
 =============
