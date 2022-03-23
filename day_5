@@ -1,0 +1,27 @@
+
+Models.py
+
+from django.db import models  
+  
+class Employee(models.Model):  
+    first_name = models.CharField(max_length=30)  
+    last_name = models.CharField(max_length=30)  
+    
+    
+    This model will create a table into the database that looks like below.
+
+CREATE TABLE appname_employee (  
+    "id" INT NOT NULL PRIMARY KEY,  
+    "first_name" varchar(30) NOT NULL,  
+    "last_name" varchar(30) NOT NULL  
+);  
+
+settings.py
+=============
+INSTALLED_APPS = [  
+    #...  
+    'appname',  
+    #...  
+]  
+
+================================
