@@ -9,7 +9,7 @@ Django template engine is used to separate the design from the python code and a
 Django Template Configuration
 =============================
 To configure the template system, we have to provide some entries in settings.py file.
-
+import os
 TEMPLATES = [  
     {  
         'BACKEND': 'django.template.backends.django.DjangoTemplates',  
