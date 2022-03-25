@@ -1,0 +1,53 @@
+step 1: open pycharm
+step 2: file --> new project
+        select : django -->
+        location:d:/foldername
+        
+        templates folder:empty
+        application name: type(myapp)
+step 3: 
+        application name -->right click --> new  --> directory (templates)
+step 4: 
+        templates folder --> new --> html file(sample.html)
+step 5:
+        settings.py
+        line no.12:  import os
+        installed_apps = [
+          line no.40: 'application name',
+          ]
+         templates = [
+          line no:58:  'DIRS': [os.path.join(BASE_DIR, 'templates')],
+          ]
+        
+ step 6:
+    urls.py
+    
+    from django.contrib import admin
+from django.urls import path
+from myapp12 import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('myfunction/', views.myfunction),
+]
+step 7:
+views.py
+
+from django.shortcuts import render
+from django.template import loader
+from django.http import HttpResponse
+
+
+# Create your views here.
+
+def myfunction(request):
+    tem=loader.get_template("simple.html")
+    return HttpResponse(tem.render())
+    
+    d:/projectname>python manage.py runserver
+    
+    browser:
+    http://localhost:8000/myfunction
+    
+
+        
