@@ -20,17 +20,7 @@ step 5:
           ]
         
  step 6:
-    urls.py
-    
-    from django.contrib import admin
-from django.urls import path
-from myapp12 import views
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('myfunction/', views.myfunction),
-]
-step 7:
+   
 views.py
 
 from django.shortcuts import render
@@ -48,6 +38,16 @@ def myfunction(request):
     
     browser:
     http://localhost:8000/myfunction
+step 7:    
+ urls.py
     
+    from django.contrib import admin
+from django.urls import path
+from myapp12 import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('myfunction/', views.myfunction),
+]
 
         
