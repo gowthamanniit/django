@@ -1,3 +1,9 @@
+open terminal:
+
+pip install mysqlclient  (if MySQLdb import error)
+============================================================
+
+
 The settings.py file contains all the project settings along with database connection details. 
 By default, Django works with SQLite, database and allows configuring for other databases as well.
 
