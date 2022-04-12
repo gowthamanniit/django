@@ -35,6 +35,7 @@ The created database contains the following tables.
 open terminal:
 
 pip install mysqlclient  (if MySQLdb import error)
+pip install mysql-connector-python
 ====================================================
 
 Migrating Model
