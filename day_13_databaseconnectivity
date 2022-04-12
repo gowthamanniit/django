@@ -1,6 +1,4 @@
-open terminal:
 
-pip install mysqlclient  (if MySQLdb import error)
 ============================================================
 
 
@@ -33,6 +31,11 @@ $ python3 manage.py migrate
 This command will create tables for admin, auth, contenttypes, and sessions.
 Now, access to the MySQL database and see the database from the list of databases.
 The created database contains the following tables.
+======================================================
+open terminal:
+
+pip install mysqlclient  (if MySQLdb import error)
+====================================================
 
 Migrating Model
 ---------------------
