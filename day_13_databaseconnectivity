@@ -13,6 +13,12 @@ mysql driver is used to establishing a connection between application and databa
 
 settings.py
 ===========
+add header file:
+----------------
+from django.db.backends.mysql.base import DatabaseWrapper
+DatabaseWrapper.data_types['DateTimeField'] = 'datetime'
+------------------------
+
 DATABASES = {  
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
@@ -35,6 +41,8 @@ The created database contains the following tables.
 open terminal:
 
 pip install mysqlclient  (if MySQLdb import error)
+
+or (no need)
 pip install mysql-connector-python
 ====================================================
 
