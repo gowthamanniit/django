@@ -71,7 +71,8 @@ To create migration use the following command.
 ===============================
 $ python3 manage.py makemigrations  
 ================================
-
+forms.py
+=========
 from django.db import migrations, models  
 class Migration(migrations.Migration):  
     initial = True  
@@ -92,6 +93,15 @@ class Migration(migrations.Migration):
         ),  
     ]  
 Now, migrate to reflect the changes into the database.
+
+===================or=======forms.py=======
+
+class EmpFormdb(forms.ModelForm):
+    class Meta:
+        model = Employee
+        fields = "__all__"
+
+===========================================
 
 $ python3 manage.py migrate  
 
