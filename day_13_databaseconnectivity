@@ -13,6 +13,8 @@ mysql driver is used to establishing a connection between application and databa
 
 settings.py
 ===========
+
+step 1: views--> tools --> database --> data source --> mysql--> ex: college (db)
 add header file:
 ----------------
 from django.db.backends.mysql.base import DatabaseWrapper
@@ -22,7 +24,7 @@ DatabaseWrapper.data_types['DateTimeField'] = 'datetime'
 DATABASES = {  
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'djangoApp',  
+        'NAME': 'college',    // here college is database name
         'USER':'root',  
         'PASSWORD':'mysql',  
         'HOST':'localhost',  
