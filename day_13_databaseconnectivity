@@ -71,7 +71,8 @@ To create migration use the following command.
 ===============================
 $ python3 manage.py makemigrations  
 ================================
-forms.py
+
+0001.initial.py (myapp--> migrations folder -->this file is automattically created)
 =========
 from django.db import migrations, models  
 class Migration(migrations.Migration):  
@@ -95,6 +96,7 @@ class Migration(migrations.Migration):
 Now, migrate to reflect the changes into the database.
 
 ===================or=======forms.py=======
+from MyApp13.models import Employee
 
 class EmpFormdb(forms.ModelForm):
     class Meta:
@@ -109,4 +111,38 @@ Check the database again, now it contains the employee table.
 
 See, a table is present in the database. Well, 
 we have successfully established a connection between our Django application and MySQL database.
+
+admin.py
+========
+from django.contrib import admin
+# Register your models here.
+from MyApp13.models import Employee
+admin.site.register(Employee) # Employee is registered
+
+> python manage.py migrate
+> python mangae.py createsuperuser
+username:gowthaman
+password:password
+repeat password: password
+email: gowthaman@niit-karur.com
+
+>python manage.py runserver
+open browser
+
+http://127.0.0.1:8000/admin
+username:
+password:
+login
+
+employee --> add, del,update
+
+pycharm:
+    view-->tools window --> database --> mysql --> query console --> new query console
+    
+    select * from tablename.
+    
+    
+    
+
+
 
