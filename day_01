@@ -50,6 +50,7 @@ important features of django
    or 2.13
    or 3.2.9 (latest version)  (it will work python 3.10  versions)
    
+   or pip install django (django-admin file in scripts)
    
    uninstall django:
             pip uninstall django==1.11
