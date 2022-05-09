@@ -10,6 +10,8 @@ def index(request):
     
   urls.py
   ========
+  
+  from yourapp import views
   path('index/', views.index),  
   
   views.py
