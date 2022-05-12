@@ -124,3 +124,24 @@ def index(request):
 <h3>My Name is: {{ student }}</h3>  
 </body>  
 </html>  
+===============================================================
+passing multiple variables(object)
+
+def varfun(request):
+    tem=loader.get_template("pgm2.html")
+    mydetails={"rno":1001,
+          "name":"gowthaman",
+          "mark":100
+          }
+    return HttpResponse(tem.render(mydetails))
+    =======================================================
+    pgm2.html
+    <html>
+<body>
+<h1> Welcome to Django Variable Access</h1>
+<h1>My name is {{name}}</h1>
+<h1>My rno is {{rno}}</h1>
+<h1> my mark is {{mark}}</h1>
+</body>
+</html>
+
