@@ -1,0 +1,78 @@
+how to load html file in django?
+=======================
+	step 1:
+		open your app(srinathapp)
+		create new folder namely 'templates'
+		write html program inside the templates folder
+	step 2:
+		open settings.py(inside the project name)
+		
+		i) add header file: import os
+		ii)installed apps: 'srinathapp'
+		iii)templates  :   'DIRS': [os.path.join(BASE_DIR, 'templates')],
+	step 3:
+		views.py (inside the app name)
+		=======
+		from django.shortcuts import render
+		from django.template import loader
+		from django.http import HttpResponse
+			
+		def loadhtmlfun(request):
+			tem=loader.get_template("pgm1.html")
+			return HttpResponse(tem.render())
+	step 4:
+		urls.py(inside the project name)
+		======================
+		from django.contrib import admin
+		from django.urls import path
+		from srinathapp import views
+		
+		urlpatterns = [
+			...................
+			path('loadhtmlfun/', views.loadhtmlfun),
+		]
+
+	step 5:
+		command prompt:(project folder : ex:srinathproject)
+		c:/..../............/.../scripts/srinathproject> py manage.py runserver
+
+		it will show ip + port
+
+	step 6: open browser:
+		http://127.0.0.1:8000/loadhtmlfun
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+		
+				
+		
+		
+	
