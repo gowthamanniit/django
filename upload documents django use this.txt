@@ -1,0 +1,55 @@
+Upload documents:
+==============
+
+step 1: create upload folder inside the static folder.
+step 2: create python file (functions.py) inside the upload folder
+          def handle_upload_file(f):
+	    with open('srinathapp/static/upload/'+f.name,'wb+') as destination:
+	        for k in f.chunks():
+	            destination.write(k)
+step 3: write html file(inside templates folder)
+	<!DOCTYPE html>
+<html>
+<head>
+<title>Django MOdels</title>
+</head>
+<body bgcolor="cyan">
+<h1> DJango Upload Image</h1>
+<form method="post"  enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Upload Image</button>
+</form>
+</body>
+</html>
+step 4: form.py
+===========
+class UploadForm(forms.Form):
+    firstname=forms.CharField(label="Enter First Name:",max_length=50)
+    lastname=forms.CharField(label="Enter Last Name:",max_length=50)
+    email=forms.EmailField(label="Enter Your Email Id:")
+    file=forms.FileField()
+step 5: views.py
+=============
+from srinathapp.form import UploadForm
+from srinathapp.static.upload.functions import handle_upload_file
+def uploadfun(request):
+    if request.method=="POST":
+        obj=UploadForm(request.POST,request.Files)
+        if obj.is_valid():
+            handle_upload_file(request.FILES['file'])
+            return HttpResponse("File Uploaded Successfully")
+    else:
+        obj=UploadForm()
+        return HttpResponse(request,"pgm8.html",{'form':obj})
+step 6:urls .py
+=========
+   path('UploadFun/', views.UploadFun)
+step 7:
+======
+save and run
+
+	
+
+
+
