@@ -1,0 +1,45 @@
+static file handling:
+=============
+to mange css,javascript,images, etc
+
+step 1:
+	settings.py 
+	========
+	INSTALLED_APPS = [
+	django.contrib.staticfiles]
+step 2:
+	STATIC_URL = '/static/'
+step 3:
+	in your appname(srinathapp)
+	create one folder --> folder name should be static
+		         --> create 3 folders inside static folder
+			--> css
+			--> javascript
+			--> images
+step 4: loading images:
+
+	place one image inside static/images folder	
+step 5:
+ 	write html program in templates folder
+	<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+</head>
+<body bgcolor="cyan">
+<img src="{% static '/images/multi.jpg'%}" alt="not found"></img>
+</body>
+</html>
+step 6:
+	views.py
+	-----------
+	from django.shortcuts import render
+	def loadimgfun(request):
+   	 return render(request,'pgm2.html')
+step 7:      urls.py
+                 --------
+	 path('loadimgfun/', views.loadimgfun),
+step 8:
+	run	
+
+	
