@@ -1,0 +1,60 @@
+django model form
+==============
+use:
+	It is a inbuilt class which is used to create an html file without write html form code by using the model.
+
+	Django automattically does it for us to reduce the application development time.
+
+advantages:
+	to create a table in database automattically.
+
+models.py
+========
+from django.db import models.
+
+class Student(models.Model):
+	firstname = model.CharField(max_length=20)
+	lastname = model.CharField(max_length=30)
+	class Meta:
+		db_table="Student"
+form.py(user should create form.py file manually)
+		(form.py file must be srinathapp folder)
+======
+from django import forms
+from srinathapp.models import Student
+
+class StudentForm(forms.ModelForm):
+	class meta:
+		model = Student
+		fields = "__all__"
+
+views.py
+=======
+from srinathapp.form import StudentForm
+def StudentFormFun(request):
+    stu=StudentForm()
+    return render(request,"pgm6.html",{'form':stu})
+urls.py(srinathproject)
+=====
+   path('StudentFormFun/',views.StudentFormFun)
+html file: (srinathapp --> templates folder)
+================================
+<!DOCTYPE html>
+<html>
+<head>
+<title>Django MOdels</title>
+</head>
+<body bgcolor="cyan">
+<h1> DJango Models - Automattically create Html Forms(inputbox,password,radio,check)</h1>
+<form method="post" >
+{% csrf_token %}   <!-- CSRF : Cross Site Resource Forgery -->
+	              <!-- label,Textbox,Email,Image,..... automattically place -->
+{{ form.as_p }}       <!-- paragraph format -->
+<button type="submit">Save Button</button>
+</form>
+</body>
+</html>
+
+run server:
+
+http://127.0.0.1:8000/funname
