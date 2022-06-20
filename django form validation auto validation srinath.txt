@@ -1,0 +1,65 @@
+django Form Validation:
+=================
+is_valid() method is used to validate forms
+
+is_valid() method is built-in method.
+
+this method automattically validate form when submiting the form.
+
+step 1: model.py
+============
+from django.db import models
+class Employee(models.Model):
+    eid=models.CharField(max_length=20)
+    ename=models.CharField(max_length=100)
+    econtact=models.CharField(max_length=100)
+    eemail=models.EmailField()
+    class Meta:
+        db_table="Employee"
+step 2: form.py
+===========
+from django import forms
+from srinathapp.models import Employee
+class EmployeeForm(forms.ModelForm):
+    class Meta:
+        model=Employee
+        fields="__all__"
+
+step 3: views.py
+============
+from srinathapp.form import EmployeeForm
+from django.shortcuts import redirect
+from django.shortcuts import render
+def EmpValidate(request):
+    if request.method == "POST":
+        form=EmployeeForm(request.POST)
+        if form.is_valid():            
+            #return HttpResponse('Page Valid')
+            return redirect('/loadcssfile')
+        else:
+            #return HttpResponse('Page Not Valid')
+            return redirect('/loadimgfun')
+    else:
+        form=EmployeeForm()
+        return render(request,'pgm9.html',{'form':form})
+
+step 4: html file - inside the templates folder (pgm9.html)	
+=========================================
+<!DOCTYPE html>
+<html>
+<head>
+<title>Django upload documents</title>
+</head>
+<body bgcolor="cyan">
+<h1> DJango Form Validation</h1>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Validate Page</button>
+</form>
+</body>
+</html>
+step 5: (urls.py)
+=====
+path('EmpValidate/', views.EmpValidate)
+step 6: save and run
