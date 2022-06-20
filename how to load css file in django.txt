@@ -1,0 +1,55 @@
+Django Loading CSS Example:
+======================
+
+syntax:(templates-->html file)
+<% load static %>
+<link href="{% static 'css/filename.css' %}" rel="stylesheet">
+
+
+step 1:css file: (appname--> static --> css)
+          =========================
+ex:
+	h1
+	{
+	color:red;
+	}
+step 2:   html file: appname-->templates 
+              ======================
+ex:
+	<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+<link href="{% static 'css/cssfile.css' %}" rel="stylesheet">
+</head>
+<body bgcolor="cyan">
+
+<h1> DJango Loading CSS Example</h1>
+<h2> DJango Loading CSS Example</h2>
+<h1> DJango Loading CSS Example</h1>
+<h3> DJango Loading CSS Example</h3>
+<h1> DJango Loading CSS Example</h1>
+<h5> DJango Loading CSS Example</h5>
+
+</body>
+</html>
+step 3:
+	views.py
+	========
+import django.shortcuts import render
+def loadcssfile(request):
+    return render(request, 'pgm5.html')
+
+step 4:	urls.py
+	=====
+	from appname(srinathapp) import views
+
+	urlspattern=[
+	..........
+	path('loadcssfile/', views.loadcssfile),    
+	]
+
+step 5:
+	c:/../../> py manage.py runserver
+
+========================================
