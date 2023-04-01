@@ -39,7 +39,9 @@ important features of django
       download  get-pip.py file from in this github and paste python310 folder not script folder.
       
       c:.../python310> py get-pip.py     
-      
+     
+  upgrader pip:
+  python.exe -m pip install --upgrade pip
                 
   pip stands for "preferred installer program".
  
