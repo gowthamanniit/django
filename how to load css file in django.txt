@@ -2,7 +2,7 @@ Django Loading CSS Example:
 ======================
 
 syntax:(templates-->html file)
-<% load static %>
+{% load static %}
 <link href="{% static 'css/filename.css' %}" rel="stylesheet">
 
 
