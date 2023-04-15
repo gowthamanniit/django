@@ -1,7 +1,7 @@
 how to load html file in django?
 =======================
 	step 1:
-		open your app (yourapp folder)
+		open your app (yourapp folder)  or open your project(first)
 		create new folder namely 'templates'
 		write html program inside the templates folder
 	step 2:
