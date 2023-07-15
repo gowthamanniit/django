@@ -1,0 +1,90 @@
+API Handling:
+===========
+	API --> Application Programming Interface
+		
+	Request --> send  or question
+	Response --> answer or ouput
+		--> response in JSON format
+
+		ex:
+		stud={
+			sno:1,
+			sname:"raja",
+			marks:{tmail:44,	
+				eng:45,
+				mat:88
+				},
+			rank:4,
+			city:["","",""]
+		}
+sample free api providing website:
+	https://openweathermap.org/
+
+	signin --> create new accout
+		--> companyname: livewire
+
+	confirmation email -->activate
+	
+	api key : 2 hrs wait to activate api key
+--------------------------------------------------
+3fd756d3c6233eecf8a57b9da9ce4d07
+
+click API menu
+
+current weather data --> API doc
+		--> Built-in API request by city name
+
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+ex:
+https://api.openweathermap.org/data/2.5/weather?q=karur&appid=3fd756d3c6233eecf8a57b9da9ce4d07
+
+open post man:
+	url : paste
+-------------------------------------------------
+form.py
+=======
+class CityForm(forms.Form):
+    cname=forms.CharField(label="Enter City Name:",max_length=30)
+html(templates folder)
+==================
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="post">
+
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" name="report" value="show report">
+
+	</form>
+
+</body>
+</html>
+views(app folder)
+==============
+from gapp.form import CityForm
+def cityfun(request):
+    if request.method=="POST":
+        searchcity=request.POST["cname"]
+        ans="<h1>Entered City Name: "+searchcity+"</h1>"
+        #return HttpResponse(ans)
+        #return HttpResponseRedirect("https://www.facebook.com")
+        #-----------------------
+        apikey='https://api.openweathermap.org/data/2.5/weather?q=%s&appid=3fd756d3c6233eecf8a57b9da9ce4d07'%searchcity
+        return HttpResponseRedirect(apikey)
+    else:
+        cf=CityForm()
+        return render(request,"pgmcity.html",{'form':cf})
+urls(setting.py) project folder
+=========================
+path('cityfun/',views.cityfun),
+run:
+ py manage.py runserver
+
+browser:
+	https://127.0.0.1:8000/cityfun
