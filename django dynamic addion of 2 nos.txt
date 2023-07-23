@@ -1,0 +1,37 @@
+Django: 
+addition of two numbers 
+
+step 1:form.py:(app folder)
+===========================
+from django import forms
+class AddTwo(forms.Form):
+    no1=forms.CharField(label="Enter No.1:",max_length=10)
+    no2=forms.CharField(label="Enter No.2:",max_length=10)
+step 2: pgm9.html(templates folder)
+===================================
+    <html>
+    <body>
+    <form method="post">	
+	{% csrf_token %}
+	{{form.as_table}}	
+	<input type="submit" value="addition">
+    </form>
+    </body>
+    </html>
+step 3: views.py (app folder)
+==============================
+	from myapp.form import AddTwo
+	from django.shortcuts import render
+
+	def FunAdd(request):
+	    obj=AddTwo()
+	    return render(requset,"pgm9.html",{'form':obj})
+
+step 4: URLS.py (project folder)
+================================
+	from myapp import views
+	path('FunAdd/',views.FunAdd),
+step 5:
+======
+	run(py manage.py runserver)
+	paste url in browser
