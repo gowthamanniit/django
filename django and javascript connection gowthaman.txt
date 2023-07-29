@@ -1,0 +1,59 @@
+adding js file in django
+=================
+prerequest: settings.py
+		import os, path ,static,BASE_DIR
+=======================================
+
+
+
+
+	step 1: creae javascript folder inside static folder(app folder).
+	
+	step2: write .js file inside javascript folder
+		ex:
+		function show()
+		{
+		alert("this is test");
+		}
+
+	step 3: add html file in templates folder
+		ex:
+		<!DOCTYPE html>
+		<html>
+		<head>
+		<title>test</title>
+		{% load static %}
+		<script src="{% static 'javascript/myjs.js' %}"></script>
+		<script type="text/javascript">
+		show();
+		</script>
+		</head>
+		<body>
+		<center>
+		<h1>Test JAVASCRIPT FILE IN DJANGO</h1>
+		</center>
+		</body>
+		</html>
+	step 4:
+		open views.py file
+
+		from django.shortcuts import render
+
+		def showjavascript(request):
+		        render(request,"pgm3.html")			       
+	step 5:
+	
+	
+	open url.py file
+	from gapp import views
+	path('showjavascript/',views.showjavascript), 	
+
+	step 6:
+		py manage.py runserver
+
+	step 7:
+		open broswer :
+		http://127.0.0.1:8000/showjavascript
+
+		
+		
