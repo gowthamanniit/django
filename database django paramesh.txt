@@ -1,0 +1,76 @@
+database + model + admin
+====================
+
+step 1: open settings.py file
+----------------------------------
+	configure:
+from django.db.backends.mysql.base import DatabaseWrapper
+DatabaseWrapper.data_types['DateTimeField'] = 'datetime'
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'vsb',  # vsb is userdefined database name in mysql
+        'USER':'root',
+        'PASSWORD':'12345',
+        'HOST':'localhost',
+        'PORT':'3306',   
+    }
+}
+
+step 2: open model.py 
+---------------------------
+from django import forms
+#    folder          py
+from gapp.models import Employee
+#    folder. py         classname
+
+class Emodelform(forms.ModelForm):
+    class Meta:
+        model=Employee
+        fields="__all__"
+
+step 3: open admin.py 
+-------------------------
+from django.contrib import admin
+# Register your models here.
+from gapp.models import Employee
+
+admin.site.register(Employee)
+
+step 4:
+--------
+html forms --> inbuilt automatic
+
+step 5:
+---------
+           don't go views + urls
+
+step 6: 
+--------
+> pip install mysql-connector-python
+ or
+  pip install mysqlclient
+
+step 7:
+-------
+>python manage.py migrate
+whether db table created or not.
+>python manage.py createsuperuser
+username
+email
+password
+password again
+success
+> py manage.py runserver
+
+goto browser:
+	http://127.0.0.1:8000/admin
+
+
+
+
+
+
+
