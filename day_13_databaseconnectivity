@@ -2,14 +2,18 @@
 ============================================================
 
 
-The settings.py file contains all the project settings along with database connection details. 
-By default, Django works with SQLite, database and allows configuring for other databases as well.
+The settings.py file contains all the project settings 
+along with database connection details. 
+By default, Django works with SQLite, 
+database and allows configuring for other databases as well.
 
-Database connectivity requires all the connection details such as database name, user credentials, 
+Database connectivity requires all the connection details 
+such as database name, user credentials, 
 hostname drive name etc.
 
 To connect with MySQL, django.db.backends.
-mysql driver is used to establishing a connection between application and database. Let's see an example.
+mysql driver is used to establishing a connection between application and database. 
+Let's see an example.
 
 settings.py
 ===========
@@ -57,7 +61,8 @@ Next, we will see how to create a table using the model.
 Each Django's model is mapped to a table in the database. 
 So after creating a model, we need to migrate it. Let's see an example.
 
-Suppose, we have a model class Employee in the models.py file that contains the following code.
+Suppose, we have a model class Employee in the models.py 
+file that contains the following code.
 
 // models.py
 
