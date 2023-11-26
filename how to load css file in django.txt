@@ -5,6 +5,7 @@ syntax:(templates-->html file)
 {% load static %}
 <link href="{% static 'css/filename.css' %}" rel="stylesheet">
 
+note: don't forget to add "/" : STATIC_URL = "/static/" in settings.py
 
 step 1:css file: (appname--> static --> css)
           =========================
