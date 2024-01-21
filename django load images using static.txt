@@ -6,7 +6,10 @@ step 1:
 	settings.py 
 	========
 	INSTALLED_APPS = [
-	django.contrib.staticfiles]
+	django.contrib.staticfiles
+
+	... your app name.....
+	]
 step 2:
 	STATIC_URL = '/static/'
 step 3:
