@@ -1,8 +1,11 @@
-Django provides a Form class which is used to create HTML forms. It describes a form and how it works and appears.
+Django provides a Form class which is used to create HTML forms. 
+It describes a form and how it works and appears.
 
-It is similar to the ModelForm class that creates a form by using the Model, but it does not require the Model.
+It is similar to the ModelForm class that creates a form by using the Model,
+but it does not require the Model.
 
-Each field of the form class map to the HTML form <input> element and each one is a class itself, 
+Each field of the form class map to the 
+HTML form <input> element and each one is a class itself, 
 it manages form data and performs validation while submitting the form.
 ======================================================
 from django import forms  
@@ -13,7 +16,8 @@ class StudentForm(forms.Form):
 A StudentForm is created that contains two fields of CharField type. 
 Charfield is a class and used to create an HTML text input component in the form.
 
-The label is used to set HTML label of the component and max_length sets length of an input value.
+The label is used to set HTML label of the 
+component and max_length sets length of an input value.
 
 When rendered, it produces the following HTML to the browser.
 
