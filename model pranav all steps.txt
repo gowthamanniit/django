@@ -1,0 +1,94 @@
+step 1:
+	mysql open 
+
+	create only database
+
+	ex: pranav
+
+step 2:
+	settings.py open
+	add header:
+
+	from django.db.backends.mysql.base import DatabaseWrapper
+	DatabaseWrapper.data_types['DateTimeField'] = 'datetime'
+
+	database:
+	DATABASES = {
+	'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pranav',
+        'USER':'root',
+        'PASSWORD':'12345',
+        'HOST':'localhost',
+        'PORT':'3306'
+    }
+
+step 3:
+	myapp :
+	models.py
+
+from django.db import models  
+class Employee(models.Model):  
+    eno= models.CharField(max_length=20)  
+    ename= models.CharField(max_length=100)  
+    esal=models.CharField(max_length=15)
+    gender_choices=[('M','Male'),('F','Female')]
+    gender=models.CharField(choices=gender_choices,max_length=128)
+    photo=models.ImageField()
+    class Meta:  
+        db_table = "employee1"
+
+step 4:
+
+	myproject:
+	form.py
+	from myapp.models import Employee
+	class EmpFormdb(forms.ModelForm):
+	    class Meta:
+	        model = Employee
+        	fields = "__all__"
+
+step 5:
+	myproject> py manage.py migrate
+
+	--> check your mysql database with refresh
+	--> check the table it will create automattically
+	if any changes only:
+	myproject> py manage.py makemigrations
+	myproject> py manage.py migrate
+	
+step 6:
+	open admin.py file from myapp folder
+
+	include header:
+	from myapp.models import Employee
+
+	admin.site.register(Employee)
+
+step 7:
+	c:/../.../myproject>py mange.py createsuperuser
+
+	Email :
+	password:
+	confirm password:
+	..
+	successfully created superuser
+
+step 8:
+	open web browser:
+	type url in address box:
+	http://127.0.0.1:8000/admin
+
+	add extra/remove permission to subuser
+
+step 9:
+	check insert/delete/update/search data.
+
+
+
+
+
+	
+	
+
+		
