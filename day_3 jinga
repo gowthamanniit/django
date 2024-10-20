@@ -37,3 +37,38 @@ include file:
 
 this is way to define jinga variables.
 ======================================================
+example:pgm3.html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1> argument passing from views to html </h1>
+	<h1>Student Roll Number : {{preobj.rno}} </h1>
+	<h1>Student Name : {{preobj.sname}} </h1>
+	<h1>Student mark1 : {{preobj.mark1}} </h1>
+	<h1>Student mark2 : {{preobj.mark2}} </h1>
+	<h1>Student mark3 : {{preobj.mark3}} </h1>
+	<h1>Student Total mark : {{total}} </h1>
+
+	
+</body>
+</html>
+===============views.py===================
+def loadhtmlarg(request):
+    sobj={
+    "rno":1001,
+    "sname":"akshaya",
+    "mark1":99,
+    "mark2":88,
+    "mark3":78    
+    }
+    obj2={
+            "preobj":sobj,
+            "total":sobj["mark1"]+sobj["mark2"]+sobj["mark3"]
+        }
+    t=loader.get_template("pgm3.html")
+    return HttpResponse(t.render(obj2))
