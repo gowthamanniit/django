@@ -6,11 +6,17 @@ step 1:
 	ex: pranav
 
 step 2:
+	>pip install mysqlclient
+	or
+	>pip install mysql-connector-python
+	or
+	>pip install mysql-python
+
 	settings.py open
 	add header:
 
 	from django.db.backends.mysql.base import DatabaseWrapper
-	DatabaseWrapper.data_types['DateTimeField'] = 'datetime'
+	# DatabaseWrapper.data_types['DateTimeField'] = 'datetime'
 
 	database:
 	DATABASES = {
