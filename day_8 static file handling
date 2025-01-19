@@ -1,7 +1,9 @@
 apart from business logic and data handling, 
-we also need to handle and manage static resources like CSS, JavaScript, images etc.
+we also need to handle and manage static resources like 
+CSS, JavaScript, images etc.
 
-It is important to manage these resources so that it does not affect our application performance.
+It is important to manage these resources so that 
+it does not affect our application performance.
 
 The django.contrib.staticfiles module helps to manage them.
 Django Static (CSS, JavaScript, images) Configuration:
