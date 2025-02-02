@@ -94,3 +94,30 @@ urlpatterns = [
 
 run:
 localhost:8000/index
+
+=========================example====================
+from django import forms
+class Student(forms.Form):
+    firstname=forms.CharField(label="Enter first Name",max_length=30)
+    lastname=forms.CharField(label="Enter last Name",max_length=30)
+    city=forms.CharField(label="city:",max_length=30)
+    image=forms.ImageField(label="Photo upload:")
+    resume=forms.FileField(label="Resume upload:")
+
+    genchoice=[('m','male'),('f','female')]
+    gender_model1=forms.ChoiceField(label="Select Gender:",choices=genchoice)
+    gender_model2=forms.ChoiceField(label="Select Gender:",choices=genchoice,widget=forms.RadioSelect)
+
+    
+    course1=forms.BooleanField(label="C programming")
+    course2=forms.BooleanField(label="C++ programming")
+    course3=forms.BooleanField(label="java programming")
+
+    dob=forms.DateField(label="select DOB")
+    doj=forms.DateTimeField(label="select DOB")
+    email=forms.EmailField(label="enter email id")
+    
+
+    
+    
+
