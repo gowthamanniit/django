@@ -5,7 +5,7 @@ step 1: open settings.py file
 ----------------------------------
 	configure:
 from django.db.backends.mysql.base import DatabaseWrapper
-DatabaseWrapper.data_types['DateTimeField'] = 'datetime'
+DatabaseWrapper.data_types['DateTimeField'] = 'datetime' // don't use this line new version
 
 
 DATABASES = {
@@ -27,9 +27,26 @@ from gapp.models import Employee
 #    folder. py         classname
 
 class Emodelform(forms.ModelForm):
+	
     class Meta:
         model=Employee
-        fields="__all__"
+        fields="__all__" // remove this line
+
+new version:
+from django.db import models
+class Employee(models.Model):
+    eid=models.CharField(max_length=10)
+    ename=models.CharField(max_length=20)
+    esal=models.CharField(max_length=10)
+    aadhar=models.CharField(max_length=12,default=0)
+    phone=models.CharField(max_length=10,default=0)  
+  
+    class Meta:
+        db_table="employee"
+
+>python manage.py migrate (2 times)
+>python manage.py makemigrations (2 times)
+check your mysql db
 
 step 3: open admin.py 
 -------------------------
@@ -67,6 +84,7 @@ success
 
 goto browser:
 	http://127.0.0.1:8000/admin
+
 
 
 
