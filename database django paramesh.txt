@@ -1,9 +1,14 @@
 database + model + admin
 ====================
+step: 1
+		open mysql 
+	    create database only (don't create table)
+        (table create automattically)
 
-step 1: open settings.py file
+step 2: open settings.py file
 ----------------------------------
 	configure:
+import os
 from django.db.backends.mysql.base import DatabaseWrapper
 DatabaseWrapper.data_types['DateTimeField'] = 'datetime' // don't use this line new version
 
@@ -32,7 +37,8 @@ class Emodelform(forms.ModelForm):
         model=Employee
         fields="__all__" // remove this line
 
-new version:
+new version:(use only this for new)
+===================================
 from django.db import models
 class Employee(models.Model):
     eid=models.CharField(max_length=10)
@@ -43,10 +49,10 @@ class Employee(models.Model):
   
     class Meta:
         db_table="employee"
-
->python manage.py migrate (2 times)
 >python manage.py makemigrations (2 times)
-check your mysql db
+>python manage.py migrate (2 times)
+
+check your mysql db ==> automattically created tables
 
 step 3: open admin.py 
 -------------------------
@@ -84,6 +90,7 @@ success
 
 goto browser:
 	http://127.0.0.1:8000/admin
+
 
 
 
