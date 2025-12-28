@@ -24,6 +24,7 @@ step 3: write html file(inside templates folder)
 </html>
 step 4: form.py
 ===========
+from django import forms
 class UploadForm(forms.Form):
     firstname=forms.CharField(label="Enter First Name:",max_length=50)
     lastname=forms.CharField(label="Enter Last Name:",max_length=50)
@@ -50,6 +51,7 @@ step 7:
 save and run
 
 	
+
 
 
 
