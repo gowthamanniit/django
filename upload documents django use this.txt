@@ -36,7 +36,7 @@ from srinathapp.form import UploadForm
 from srinathapp.static.upload.functions import handle_upload_file
 def uploadfun(request):
     if request.method=="POST":
-        obj=UploadForm(request.POST,request.Files)
+        obj=UploadForm(request.POST,request.FILES)
         if obj.is_valid():
             handle_upload_file(request.FILES['file'])
             return HttpResponse("File Uploaded Successfully")
@@ -51,6 +51,7 @@ step 7:
 save and run
 
 	
+
 
 
 
