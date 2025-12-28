@@ -42,7 +42,7 @@ def uploadfun(request):
             return HttpResponse("File Uploaded Successfully")
     else:
         obj=UploadForm()
-        return HttpResponse(request,"pgm8.html",{'form':obj})
+        return render(request,"pgm8.html",{'form':obj})
 step 6:urls .py
 =========
    path('UploadFun/', views.UploadFun)
@@ -51,6 +51,7 @@ step 7:
 save and run
 
 	
+
 
 
 
